@@ -1,0 +1,173 @@
+/* General */
+
+body 
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+/* idea of wrapper  width: 900px - is this necessary? Need to also introduce media query after*/
+#wrapper
+{   
+    margin: auto;
+}
+
+h1
+{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+h2
+{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+h3
+{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+p
+{
+    font-size: 0.9em;
+}
+
+/* Header */
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#logo
+{
+    display: flex;
+    flex-direction: row;
+    width: 110px;
+    height: 40px;
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+    font-size: 0.9em;
+}
+
+nav li
+{
+    margin-right: 30px;
+}
+
+nav a
+{
+    color: black;
+    padding-bottom: 5px;
+}
+
+nav a:hover
+{
+    color: #0065FC;
+    border-top: 3px solid #0065FC;
+}
+
+/* Hébergements section */
+form
+{
+  border: 2px solid #F2F2F2;
+  border-radius: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+/* why can't I change font of search bar? */
+
+#filtres
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Main section */
+main
+{
+    display: flex;
+    flex-direction: row;
+}
+
+article
+{
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #F2F2F2;
+}
+
+article section
+{
+    border: 6px solid white;
+    border-radius: 10px;
+    background-color: white;
+}
+
+aside
+{
+    position: relative;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #F2F2F2;
+}
+
+aside section
+{
+    border: 6px solid white;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* some rough image size ideas... not live yet - or should I be adjusting section sizes intead?
+
+article img
+
+    width: 200px;
+    height: 100px;
+
+
+aside img
+
+    width: 110px;
+    height: 120px;
+*/
+
+/* Activités section */
+
+#activites
+{
+    display: flex;
+}
+#activites section
+{
+    border: 6px solid #F2F2F2;
+    border-radius: 10px;
+}
+
+/* Footer */
+
+footer
+{
+    display: flex;
+    background-color: #F2F2F2;
+}
+footer ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
