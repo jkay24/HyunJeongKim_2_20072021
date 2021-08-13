@@ -7,7 +7,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" type="text/css">
         <script src="https://kit.fontawesome.com/e7b9fb2fe9.js" crossorigin="anonymous"></script>
-<!--- I assume it's ok to insert a script for the purposes of this project 2?--->
         <title>Reservia</title>
     </head>
 
@@ -20,9 +19,9 @@
 
                 <nav>
                     <ul>
-                        <li><a href="#hebergements" autofocus>Hébergements</a></li>
-                        <li><a href="#activites">Activités</a></li>
-                        <li><a href="#"><strong>S'inscrire</strong></a></li>
+                        <li><div class="nav1"><a class="hover-tab" href="#hebergements">Hébergements</a></div></li>
+                        <li><div class="nav2"><a class="hover-tab" href="#activites">Activités</a></div></li>
+                        <li><div class="nav3"><a class="hover-tab" href="#"><strong>S'inscrire</strong></a></div></li>
                     </ul>
                 </nav>
             </header>
@@ -31,26 +30,25 @@
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre ville ou en pleine nature</p>
                     <form method="post" action="#">
-<!--- Map pointer need not be clickable?--->
-                        <p><i class="fas fa-map-marker-alt"></i><input type="search" name="ville" id="ville" placeholder="Marseille, France" /> 
-                        <input type="submit" value="Rechercher" /></p>
-                    </form>
-
-                    <div id="filtres">
-                    <h2>Filtres</h2>
-                        <p><i class="fas fa-money-bill-wave"></i><a href="#">Economique</a>
-                        <i class="fas fa-child"></i><a href="#">Familial</a>
-                        <i class="fas fa-heart"></i><a href="#">Romantique</a>
-                        <i class="fas fa-dog"></i></p><a href="#">Animaux autorisés</a></p>
-                    </div>                       
-                    <p><i class="fas fa-info-circle"></i>Plus de 500 logements sont disponibles dans cette ville</p>
+                        <p><div id="marker"><i class="fas fa-map-marker-alt"></i></div><input class="search" name="ville" id="ville" placeholder="Marseille, France" /> 
+                        <input class="submit" value="Rechercher" /></p>
+                    </form><br />
+                    
+                    <div class="filtres"><h2>Filtres</h2>
+                        <div class="element"><a href="#"><i class="fas fa-money-bill-wave"></i>Économique</a></div>
+                        <div class="element"><a href="#"><i class="fas fa-child fa-lg"></i>Familial</a></div>
+                        <div class="element"><a href="#"><i class="fas fa-heart fa-lg"></i>Romantique</a></div>
+                        <div class="element"><a href="#"><i class="fas fa-dog fa-lg"></i>Animaux autorisés</a></div>
+                    </div>          
+                    
+                    <p><i class="fas fa-info-circle"></i>Plus de 500 logements sont disponibles dans cette ville</p><br />
             </section>
 
             <main>
                 <article>
-                    <h1 id="hebergements">Hébergements à Marseille</h1><br />
+                   <h1>Hébergements à Marseille</h1>
 <!--- need to think about what size images to use - I chose small for now--->
-
+                <div class="main1">
                     <section>
                         <a href="#">
                             <p><img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Auberge la Cannabière" /></p>
@@ -105,14 +103,15 @@
                             <p><img src="#" alt="#" /></p>
                         </a>
                     </section> <br/>
-
+                </div>
                     <h2>Afficher plus</h2>
                 </article>
 
                 <aside>
+                    <div class="populaires">
                     <h1>Les plus populaires</h1>
-                    <i class="fas fa-chart-line"></i>
-
+                    <i class="fas fa-chart-line fa-lg"></i></div>
+                <div class="main2">
                     <section>
                         <a href="#">
                             <p><img src="images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="Hôtel Le soleil du matin" /></p>
@@ -139,57 +138,60 @@
                             <p><img src="#" alt="#" /></p>
                         </a>
                     </section>
+                </div>
                 </aside>
             </main>
 
             <section>
-                <h1 id="activites">Activités à Marseille</h1><br />
-                    <section>
+                <h1>Activités à Marseille</h1><br />
+            <div id="activites">
+                    <div class="act1"><section>
                         <a href="#">
                             <p><img src="images/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="Vieux Port" /></p>
                             <h3>Vieux Port</h3>
                         </a>
-                    </section>
+                    </section></div>
 
-                    <section>
+                <div class="act23">
+                    <div class="act2"><section>
                         <a href="#">
                             <p><img src="images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="Fort de Pomègues" /></p>
                             <h3>Fort de Pomègues</h3>
                         </a>
-                    </section>
+                    </section></div>
 
-                    <section>
+                    <div class="act3"><section>
                         <a href="#">
                             <p><img src="images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Îles du Frioul" /></p>
                             <h3>Îles du Frioul</h3>
                         </a>
-                    </section>
-
-                    <section>
+                    </section></div>
+                </div>
+                    <div class="act4"><section>
                         <a href="#">
                             <p><img src="images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="Parc National des Calanques" /></p>
                             <h3>Parc National des Calanques</h3>
                         </a>
-                    </section>
+                    </section></div>
 
-                    <section>
+                    <div class="act5"><section>
                         <a href="#">
                             <p><img src="images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="Notre-Dame-de-la-Garde" /></p>
                             <h3>Notre-Dame-de-la-Garde</h3>
                         </a>
-                    </section>
+                    </section></div>
 
-                    <section>
+                    <div class="act6"><section>
                         <a href="#">
                             <p><img src="images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="Parc Longchamp" /></p>
                             <h3>Parc Longchamp</h3>
                         </a>
-                    </section>
-            </section>
+                    </section></div>
+            </div>
+            </section><br />
 
-<!--- I guessall footer items should be clickable too?--->
             <footer>
-                <div id="propos">
+                <div class="foot">
                     <h3>A propos</h3>
                     <ul>
                         <li><a href="#">Fonctionnement du site</a></li>
@@ -198,7 +200,7 @@
                     </ul>
                 </div>
 
-                <div id="nos">
+                <div class="foot">
                     <h3>Nos hébergements</h3>
                     <ul>
                         <li><a href="#">Charte qualité</a></li>
@@ -206,7 +208,7 @@
                     </ul>
                 </div>
 
-                <div id="assistance">
+                <div class="foot">
                     <h3>Assistance</h3>
                     <ul>
                         <li><a href="#">Centre d'aide</a></li>

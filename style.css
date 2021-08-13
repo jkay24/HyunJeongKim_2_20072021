@@ -5,7 +5,7 @@ body
     font-family: 'Raleway', sans-serif;
 }
 
-/* idea of wrapper  width: 900px - is this necessary? Need to also introduce media query after*/
+/* idea of wrapper  width: 900px - is this necessary? Need to also introduce media query later*/
 #wrapper
 {   
     margin: auto;
@@ -34,6 +34,12 @@ p
     font-size: 0.9em;
 }
 
+body a
+{
+    text-decoration: none;
+    color: black;
+}
+
 /* Header */
 
 header
@@ -41,12 +47,13 @@ header
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 #logo
 {
     display: flex;
-    flex-direction: row;
     width: 110px;
     height: 40px;
 }
@@ -60,14 +67,22 @@ nav ul
 
 nav li
 {
-    margin-right: 30px;
-}
-
-nav a
-{
-    color: black;
+    margin-left: 70px;
+    margin-right: 10px;
     padding-bottom: 5px;
 }
+
+.nav1 a
+{
+    color:#0065FC;
+    
+}
+
+nav a strong
+{
+    color:#0065FC;
+}
+
 
 nav a:hover
 {
@@ -75,60 +90,210 @@ nav a:hover
     border-top: 3px solid #0065FC;
 }
 
-/* Hébergements section */
+.hover-tab
+{
+    padding-top: 20px;
+}
+
+/* Search bar and filters section */
+
+#wrapper section
+{ 
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+h1 + p
+{
+    line-height: 5px;
+    padding-bottom: 11px;
+}
+
+#marker
+{
+    color: black;
+    background-color: #F2F2F2;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 15px 0 0 15px;
+}
+
+#marker i
+{
+    position: relative;
+    vertical-align: bottom;
+    height: 12px;
+}
+
 form
 {
-  border: 2px solid #F2F2F2;
-  border-radius: 10px;
-  font-family: 'Raleway', sans-serif;
+  display: flex;
+  position: relative;
+  border-radius: 15px;
+  height: 50px;
+  width: 190%;
 }
-/* why can't I change font of search bar? */
 
-#filtres
+input.search
+{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+    padding-left: 10px;
+    border: 1px solid #F2F2F2;
+    width: 8%;
+}
+
+::placeholder
+{
+    color: black;
+}
+
+input.submit
+{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-left: 5px;
+    color: white;
+    border: 1px solid #F2F2F2;
+    background-color:#0065FC;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 5%;
+    text-align: center;
+}
+
+.filtres
 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     font-size: 1.1em;
     font-weight: bold;
+    padding-bottom: 11px;
 }
 
-/* Main section */
+.element
+{
+    display: inline-block;
+    border-top: 3px solid #F2F2F2;
+    border-bottom:3px solid #F2F2F2;
+    border-right: 3px solid #F2F2F2;
+    border-radius: 50px;
+    padding-right: 30px;
+    margin-left: 30px;
+    height: 50px;
+}
+
+.element i
+{
+    position: relative;
+    color: #0065FC;
+    background-color: #DEEBFF;
+    border: 5px solid #DEEBFF;
+    border-radius: 60px;
+    padding: 12px;
+    width: 1em;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.element :hover 
+{
+    color: #0065FC;
+    text-transform: uppercase;
+}
+
+p i
+{
+    color: white;
+    background-color: #0065FC;
+    border: solid 1px #F2F2F2;
+    border-radius: 50px;
+    margin-right: 13px;
+}
+
+/* Main hébergements section */
 main
 {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
+article h1, article h2
+{
+    margin-left: 30px;
+}
 article
 {
-    justify-content: space-between;
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 20px;
+    padding: 10px;
     background-color: #F2F2F2;
+    margin-left: 30px;
+}
+
+#main1
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 article section
 {
-    border: 6px solid white;
-    border-radius: 10px;
+    border: 8px solid #e9e4e4;
+    border-radius: 20px;
     background-color: white;
+}
+
+article img
+{
+    width: 200px;
+    height: auto;
+    overflow: hidden;
 }
 
 aside
 {
     position: relative;
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 20px;
+    padding: 10px;
     background-color: #F2F2F2;
+    margin-right: 30px;
+}
+
+.populaires
+{
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    justify-content: space-between;
+    vertical-align: bottom;
+}
+
+aside h1
+{
+    margin-left: 30px;
+}
+
+#main2
+{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 
 aside section
 {
-    border: 6px solid white;
-    border-radius: 10px;
+    border: 8px solid #e9e4e4;
+    border-radius: 20px;
     background-color: white;
 }
+
+
 
 /* some rough image size ideas... not live yet - or should I be adjusting section sizes intead?
 
@@ -149,12 +314,61 @@ aside img
 #activites
 {
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
+#activites h3
+{
+    margin-left: 20px;
+}
+
 #activites section
 {
-    border: 6px solid #F2F2F2;
-    border-radius: 10px;
+    border: 8px solid #F2F2F2;
+    border-radius: 20px;
+    margin: 0px;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
 }
+
+.act1 img
+{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.act4 img
+{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 465px;
+}
+
+#activites p
+{
+    margin-block-start: 0px;
+}
+
+.act1 section, .act4 section
+{
+    height: 520px;
+}
+
+.act23 
+{
+    display:flex;
+    flex-direction: column;
+    height: 520px;
+}
+
+.act2 img
+{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+
 
 /* Footer */
 
@@ -162,12 +376,27 @@ footer
 {
     display: flex;
     background-color: #F2F2F2;
+    padding-right: 30%;
+    justify-content: space-between;
 }
+
 footer ul
 {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-size: 0.9em;
+    margin: -4px;
+    padding: 0px;
+}
+
+footer ul li
+{
+    padding: 5px;
+}
+
+.foot
+{
+    padding: 30px;
+    margin-left: 10px;
 }
