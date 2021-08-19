@@ -5,11 +5,16 @@ body
     font-family: 'Raleway', sans-serif;
 }
 
-/* idea of wrapper  width: 900px - is this necessary? Need to also introduce media query later*/
+/* idea of wrapper  width: 900px - is this necessary? Need to add introduce media query later*/
 #wrapper
 {   
     margin: auto;
+    min-height: 100vh;
 }
+
+
+/* 400-600px for mobile (1 col), 600-900px for tablet (2 cols) and 900+px (3 cols) - need to change widths of sections*/
+
 
 h1
 {
@@ -19,13 +24,13 @@ h1
 
 h2
 {
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 
 h3
 {
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: bold;
 }
 
@@ -83,7 +88,6 @@ nav a strong
     color:#0065FC;
 }
 
-
 nav a:hover
 {
     color: #0065FC;
@@ -95,13 +99,13 @@ nav a:hover
     padding-top: 20px;
 }
 
-/* Search bar and filters section */
-
-#wrapper section
+header, .searchbar, main, #activites
 { 
     margin-left: 30px;
     margin-right: 30px;
 }
+
+/* Search bar and filters section */
 
 h1 + p
 {
@@ -210,104 +214,262 @@ p i
 {
     color: white;
     background-color: #0065FC;
-    border: solid 1px #F2F2F2;
     border-radius: 50px;
     margin-right: 13px;
 }
 
 /* Main hébergements section */
+
+/* ratio of activités to main section is about 7cm:8.5cm= 550px:668px , hence height of main section set to 670px. */
 main
 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 670px;
+    width: auto;
 }
 
-article h1, article h2
-{
-    margin-left: 30px;
-}
-article
+main > *
 {
     border-radius: 20px;
-    padding: 10px;
+    padding: 5px;
     background-color: #F2F2F2;
-    margin-left: 30px;
+    height: 670px;
 }
 
-#main1
+article
+{
+    flex-shrink: 1;
+    width: 62em;
+    margin-right: 20px;
+    padding: 0 30px 0 30px;
+}
+
+.main1
 {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    height: 80%;
+    align-content: space-between;
+}
+
+article section, aside section
+{
+    border: 3px solid white;
+    border-radius: 20px;
+    background-color: white;
+    padding: 3px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 4px #e9e8e8;
 }
 
 article section
 {
-    border: 8px solid #e9e4e4;
-    border-radius: 20px;
-    background-color: white;
+    width: 18em;
+    height: 15em;
 }
 
 article img
 {
-    width: 200px;
-    height: auto;
-    overflow: hidden;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 100%; 
+    height: auto; 
+    border: 5px solid white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: relative;
+}
+
+.main1 p
+{
+    margin-block-start: 0;
+}
+
+.main1 h3, .main1 i, .main1 h3+p
+{
+    position: relative;
+    margin-block-start: 0;
+    margin-block-end: 0.5em;
+    left: 6%;
+}
+
+.firstrow img
+{
+    clip-path: inset(25px 0 30px 0);
+    top: -25px;
+}
+
+.firstrow h3, .firstrow i, .firstrow h3+p
+{
+    top: -55px;
+}
+
+.verticalimg1 img
+{
+    clip-path: inset(60px 0 70px 0);
+    top: -60px;
+}
+
+.verticalimg1 h3, .verticalimg1 i, .verticalimg1 h3+p
+{
+    top: -132px;
+}
+
+.panier img
+{
+    clip-path: inset(0 0 10px 0);
+    top: -10px;
+}
+
+.panier h3, .panier i, .panier h3+p
+{
+    top: -22px;
+}
+
+.verticalimg2 img
+{
+    clip-path: inset(150px 0 140px 0);
+    top: -150px;
+}
+
+.verticalimg2 h3, .verticalimg2 i, .verticalimg2 h3+p
+{
+    top: -290px;
+}
+
+article i, aside p i 
+{
+    background-color: white;
+    color: #0065FC;
+    margin-right: 0px;
+}
+
+.emptystar i
+{
+    color: rgb(184, 183, 183);
+    background-color: white;
 }
 
 aside
 {
     position: relative;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: #F2F2F2;
-    margin-right: 30px;
+    flex-grow: 1;
+    margin-left: 20px;
+    padding: 0 30px 0 30px;
+}
+
+.main2
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 85%;
 }
 
 .populaires
 {
     display: flex;
     flex-direction: row;
-    margin-right: 30px;
     justify-content: space-between;
-    vertical-align: bottom;
 }
 
-aside h1
+.populaires i
 {
-    margin-left: 30px;
-}
-
-#main2
-{
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
+    position: relative;
+    vertical-align: middle;
+    top: 30px;
+    right: 10px;
 }
 
 aside section
 {
-    border: 8px solid #e9e4e4;
-    border-radius: 20px;
-    background-color: white;
+    height: 10em;
+    width: 25em;
 }
 
+.first img, .second img
+{
+    margin-left: -33%;
+    margin-top: -15%;
+    transform: scale(0.65);
+    width: 100%; 
+    height: auto; 
+    border: 5px solid white;
+    border-radius: 20px 0 0 20px;
+    position: relative;
+    clip-path: inset(0 88px 0 80px);
+}
 
+.main2 h3, .main2 i, .main2 h3+p
+{
+    position: relative;
+    margin-block-start: 0em;
+    word-wrap: normal;
+    left: 42%;
+}
 
-/* some rough image size ideas... not live yet - or should I be adjusting section sizes intead?
+.first h3, .first i
+{
+    bottom: 12em;
+}
 
-article img
+.first h3, .toutbleu h3, .second h3
+{
+    width: 49%;
+}
+.first h3+p
+{
+    bottom: 15em;
+}
 
-    width: 200px;
-    height: 100px;
+.second h3, .second i
+{
+    bottom: 14em;
+}
 
+.second h3+p
+{
+    bottom: 18em;
+}
 
-aside img
+.toutbleu img
+{
+    margin-left: -32%;
+    margin-top: -60%;
+    transform: scale(0.45);
+    width: 100%; 
+    height: auto; 
+    border: 5px solid white;
+    border-radius: 20px 0 0 20px;
+    position: relative;
+    clip-path: inset(55px 38px 30px 0px);
+}
 
-    width: 110px;
-    height: 120px;
-*/
+.toutbleu h3
+{
+    bottom: 21em;
+}
+
+.toutbleu i
+{
+    bottom: 22em;
+}
+
+.toutbleu h3+p
+{
+    bottom: 26em;
+}
+
+aside p
+{
+    margin-block-end: 5px;
+    margin-block-start: 0px;
+}
 
 /* Activités section */
 
@@ -319,30 +481,29 @@ aside img
 }
 #activites h3
 {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 #activites section
 {
-    border: 8px solid #F2F2F2;
+    border: 7px solid #e9e8e8;
     border-radius: 20px;
     margin: 0px;
-    width: 350px;
+    width: 22em;
     position: relative;
     overflow: hidden;
 }
 
-.act1 img
+#activites > *
 {
-    margin-left: 50%;
-    transform: translateX(-50%);
+    height: 520px;
+    display: flex;
 }
 
-.act4 img
+#activites img
 {
     margin-left: 50%;
     transform: translateX(-50%);
-    height: 465px;
 }
 
 #activites p
@@ -350,25 +511,99 @@ aside img
     margin-block-start: 0px;
 }
 
-.act1 section, .act4 section
+.act1 img, .act4 img
 {
-    height: 520px;
+    height: 450px;
 }
 
-.act23 
+.act2 img, .act3 img, .act5 img, .act6 img
 {
-    display:flex;
+    width: 100%; 
+    height: auto
+}
+
+.act23
+{
     flex-direction: column;
-    height: 520px;
+    justify-content: space-between;
+}
+
+.act2 section
+{
+    height: 16em;
 }
 
 .act2 img
 {
-    margin-left: 50%;
-    transform: translateX(-50%);
+    clip-path: inset(120px 0px 190px 0px);
+    position: relative;
+    top: -130px;
 }
 
+.act2 h3
+{
+    top: -325px;
+    position: relative;
+}
 
+.act3 img
+{
+    clip-path: inset(5px 0px 90px 0px);
+    position: relative;
+    top: -5px;
+}
+
+.act3 h3
+{
+    top: -96px;
+    position: relative;
+}
+
+.act3 section
+{
+    height: 12em;
+}
+
+.act56
+{
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.act5 section
+{
+    height: 13em;
+}
+
+.act5 img
+{
+    clip-path: inset(0px 0px 70px 0px);
+    position: relative;
+}
+
+.act5 h3
+{
+    position: relative;
+    top: -73px;
+}
+
+.act6 section
+{
+    height: 15em;
+}
+
+.act6 img
+{
+    clip-path: inset(0px 0px 75px 0px);
+    position: relative;
+}
+
+.act6 h3
+{
+    position: relative;
+    top: -77px;
+    
+}
 
 /* Footer */
 
