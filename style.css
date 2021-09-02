@@ -9,12 +9,21 @@
 
 #wrapper
 {
+    height: 100vh;
     width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "searchbar searchbar searchbar"
+        "main1 main1 main2"
+        "acts acts acts"
+        "footer footer footer";
 }
 
 body 
 {
     font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
 }
 
 h1
@@ -59,6 +68,7 @@ header
     display: flex;
     justify-content: space-between;
     align-items: center;
+    grid-area: header;
 }
 
 #logo
@@ -110,6 +120,11 @@ h1 + p
     padding-bottom: 11px;
 }
 
+.searchbar
+{
+    grid-area: searchbar;
+}
+
 #marker
 {
     color: black;
@@ -159,17 +174,23 @@ input.submit
     padding-left: 5px;
     color: white;
     border: 1px solid var(--grey-color);
-    background-color:#0065FC;
+    background-color:var(--blue-color);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     width: 10%;
     text-align: center;
 }
 
+button
+{
+    display: none;
+}
+
 .filtres
 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     font-size: 1.1em;
     font-weight: bold;
     padding-bottom: 11px;
@@ -229,13 +250,11 @@ input.submit
     margin-left: 10px;
 }
 
-/* Main hébergements section */
+/* Main hébergements section (ratio of activités to main section is about 7cm:8.5cm= 550px:668px , hence height of main section set to 670px) */
 
-/* ratio of activités to main section is about 7cm:8.5cm= 550px:668px , hence height of main section set to 670px. */
 .hebergements-container
 {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     height: 670px;
     width: auto;
@@ -254,6 +273,7 @@ input.submit
     width: 63em;
     padding: 0 30px 0 30px;
     margin-right: 1em;
+    grid-area: main1;
 }
 
 .fa-star
@@ -324,6 +344,7 @@ input.submit
     flex-grow: 1;
     padding: 0 30px 0 30px;
     margin-left: 1em;
+    grid-area: main2;
 }
 
 .main2-grid
@@ -391,7 +412,8 @@ input.submit
 
 #activites
 {
-    height: 550px;
+    height: 580px;
+    grid-area: acts;
 }
 
 .activites-grid
@@ -401,7 +423,7 @@ input.submit
     grid-template-columns: 23em 23em 23em 23em;
     grid-template-rows: 215px 45px 180px;
     justify-content: space-between;
-    grid-row-gap: 2em;
+    grid-row-gap: 1.5em;
     grid-template-areas: 
         "one two four five"
         "one two four six"
@@ -470,6 +492,7 @@ footer
     background-color: var(--grey-color);
     justify-content: flex-start;
     padding: 30px;
+    grid-area: footer;
 }
 
 footer ul
@@ -494,49 +517,234 @@ footer ul li
 
 /* Media queries */
 
-/* for desktops plus - 3 column showing 
-
-header, footer, #activites, .searchbar, .bloc
-{   
-    width: 100%;
-}
-why won't this work? */
-
-@media (max-width: 1600px)
-{
-    #wrapper
-    {   
-        margin: 0 auto;
-        width: 100%;
-    }
-}
-
-
-/* for tablets - 2 column showing */
-@media (max-width: 768px)
+/* For tablets - 2 column showing */
+@media (min-width: 415px) and (max-width: 768px)
 {
     #wrapper
     {
-        width: ;
         margin: 0 auto;
+        grid-template-columns: 23em 23em;
+        grid-column-gap: 1em;
+        grid-template-rows: 5em 37em 48em 45em 12em;
+        grid-template-areas: 
+            "header header"
+            "searchbar main2"
+            "main1 main1"
+            "acts acts"
+            "footer footer";
+    }
+
+    header, main, #activites, footer
+    {
+        margin: 0;
+        height: auto;
+    }
+
+    .searchbar
+    {
+        margin: 0 0 0 15px;
+    }
+
+    #logo
+    {
+        object-fit: scale-down;
+    }
+
+    input.search
+    {
+        width: 60%;
+        border-right: 0;
+    }
+
+    input.submit
+    {
+        width: 35%;
+    }
+
+    .filtres h2
+    {
+       flex-basis: 100%;
+       margin-block-end: 0.2em;
+    }
+
+    .filtres
+    {
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    .filtres-element
+    {
+        margin-left: 0;
+        margin-right: 6px;
+        padding-right: 25px;
+        margin-bottom: 10px;
+    }
+
+    .info-text
+    {
+        margin-left: 50px;
+        display: block;
+    }
+
+    .fa-stack
+    {
+        float: left;
+    }
+
+    .filtres-element .fa-stack
+    {
+        float: unset;
+    }
+
+    .populaires-sections
+    {
+       height: 9em;
+       width: 20em;
+    }
+
+    .act-sections, .hebergement-sections
+    {
+       height: 12em;
+       width: 20em;
+    }
+
+    .hebergements-container
+    {
+        flex-direction: column;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .hebergement-descriptions
+    {
+        bottom: 3%;
+    }
+    
+    .main1-grid, .main2-grid
+    {
+        align-content: center;
+    }
+
+    .main1-grid
+    {
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: 85%;
+        justify-content: space-around;
+        align-content: space-between;
+    }
+
+    .main1, .main2
+    {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main1
+    {
+        order: 2;
+        height: 47em;
+        position: relative;
+        right: 102%;
+        width: 46em;
+        margin-top: 1em;
+        padding-bottom: 0.5em
+    }
+
+    .main2
+    {
+        order: 1;
+        height: 36em;
+        width: 22.5em;
+    }
+
+    .main1 h1, .main1 h2, .populaires h1, .acts h1
+    {
+        margin-left: 18px;
+    }
+    
+    .hebergement-pics 
+    {
+        height: 7em;
+    }
+
+    #activites > *
+    {
+        align-items: center;
+    }
+
+    .activites-grid
+    {
+        grid-template-columns: 21em 21em;
+        grid-template-rows: 12em 12em;
+        justify-content: space-around;
+        grid-template-areas: 
+            "one two"
+            "three four"
+            "five six";
+    }
+
+    footer
+    {
+        padding: 20px 20px 20px 30px;
+    }
+
+    .foot
+    {
+        margin-right: 10%;
     }
 }
 
-/* for mobiles (or should I use 400-600px?) - 1 column showing */
+/* For mobiles */
 @media (max-width: 414px)
 {
     #wrapper
     {
-        width: ;
         margin: 0 auto;
+        grid-template-rows: 7em 33em 40em 40em 46em 44em 44em 27em;
+        grid-template-areas: 
+            "header"
+            "searchbar"
+            "main2"
+            "main1"
+            "main1"
+            "acts"
+            "acts"
+            "footer";
+    }
+
+    header, .searchbar, main, #activites, footer
+    {
+        margin: 0;
+        height: auto;
     }
 
     .header-wrap
     {
-        flex-direction: column;
-        flex-wrap: wrap;
         align-items: flex-start;
         border-bottom: 3px solid var(--grey-color);
+        flex-flow: row wrap;
+    }
+
+    nav
+    {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    nav ul 
+    {
+        padding-inline-start: 0;
+        flex-flow: row wrap;
+    }
+
+    nav li
+    {
+        margin: 0;
+        padding: 0 1.5em 0 1.5em;
+        position: relative;
+        right: 17%;
     }
 
     .nav1
@@ -552,11 +760,9 @@ why won't this work? */
     .nav3
     {
         order: 1;
-    }
-
-    nav
-    {
-        width: 80%;
+        position: relative;
+        bottom: 3.5em;
+        left: 18em;
     }
 
     .hover-tab
@@ -568,24 +774,172 @@ why won't this work? */
     {
         color: #0065FC;
         border-bottom: 3px solid #0065FC;
-        padding-bottom: 20px;
+        padding-bottom: 25px;
         border-top: 0;
+    }
+
+    form
+    {
+        width: 100%;
+    }
+
+    input.search
+    {
+        width: 70%;
+        border-right: 0;
+    }
+
+    button
+    {
+        display: block;
+        border-radius: 15px;
+        width: 14%;
+        background-color:var(--blue-color);
+        border: 0;
+    }
+
+    button i
+    {
+        color: white;
+    }
+
+    .submit
+    {
+        display: none;
+    }
+
+    .filtres h2
+    {
+       flex-basis: 100%;
+       margin-block-end: 0.2em;
+    }
+
+    .filtres
+    {
+        justify-content: space-between;
+        align-content: space-between;
+        height: 13.5em;
+    }
+
+    .filtres-element
+    {
+        margin-left: 0;
+        margin-right: 6px;
+        padding-right: 18px;
+    }
+
+    .filtres-text
+    {
+        margin-left: 4px;
+    }
+
+    .info-text
+    {
+        margin-left: 50px;
+        display: block;
+    }
+
+    .fa-stack
+    {
+        float: left;
+    }
+
+    .filtres-element .fa-stack
+    {
+        float: unset;
+    }
+
+    .populaires-sections
+    {
+       height: 9em;
+       width: 20em;
+    }
+
+    .act-sections, .hebergement-sections
+    {
+       height: 12em;
+       width: 20em;
+    }
+
+    .hebergements-container
+    {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hebergement-descriptions
+    {
+        bottom: 3%;
+    }
+
+    .main1-grid, .main2-grid
+    {
+        align-content: center;
+    }
+
+    .main1-grid
+    {
+        height: 90%;
+        flex-direction: column;
+    }
+
+    .main1, .main2
+    {
+        margin: 0;
+        width: auto;
+        padding: 0;
+    }
+    
+    .main1
+    {
+        background-color:white;
+        border-radius: 0;
+        order: 2;
+        height: 90em;
+    }
+
+    .main2
+    {
+        border-radius: 0;
+        order: 1;
+        height: 36em;
+        padding-bottom: 12px;
+    }
+
+    .main1 h1, .main1 h2, .populaires h1, .acts h1
+    {
+        margin-left: 18px;
+    }
+    
+    .hebergement-pics 
+    {
+        height: 7em;
+    }
+
+    #activites > *
+    {
+        align-items: center;
     }
 
     .activites-grid
     {
-        grid-template-columns: 22em;
+        grid-template-columns: 21em;
+        grid-template-rows: 12em;
+        justify-content: center;
+        grid-row-gap: 1em;
         grid-template-areas: 
             "one"
             "two"
             "three"
             "four"
             "five"
-            "six"
+            "six";
+        margin-bottom: 15px;
     }
 
-    .act-sections
+    footer
     {
-       height: 12em;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }
