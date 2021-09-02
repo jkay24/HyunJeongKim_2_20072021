@@ -414,16 +414,17 @@ button
 {
     height: 580px;
     grid-area: acts;
+    padding: 0 4em 0 0em;
 }
 
 .activites-grid
 {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 23em 23em 23em 23em;
+    grid-template-columns: 25% 25% 25% 25%;;
     grid-template-rows: 215px 45px 180px;
-    justify-content: space-between;
     grid-row-gap: 1.5em;
+    column-gap: 2em;
     grid-template-areas: 
         "one two four five"
         "one two four six"
@@ -462,7 +463,7 @@ button
 
 .act-sections
 {
-    border: 7px solid #e9e8e8;
+    box-shadow: 0 5px 10px #c5c5c544;
     border-radius: 20px;
     margin: 0px;
     overflow: hidden;
