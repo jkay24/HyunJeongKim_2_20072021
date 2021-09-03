@@ -664,7 +664,7 @@ footer ul li
     {
         display: grid;
         margin: 0 auto;
-        grid-template-rows: 7em 33em 39em 39em 46em 42em 42em 27em;
+        grid-template-rows: 7em 31em 39em 39em 46em 42em 42em 27em;
         grid-template-areas: 
             "header"
             "searchbar"
@@ -780,14 +780,13 @@ footer ul li
     {
         justify-content: space-between;
         align-content: space-between;
-        height: 13.5em;
+        padding: 0;
     }
 
     .filtres-element
     {
-        margin-left: 0;
-        margin-right: 6px;
-        padding-right: 18px;
+        margin: 0 6px 6px 0;
+        padding-right: 14px;
     }
 
     .filtres-text
@@ -861,8 +860,8 @@ footer ul li
     {
         border-radius: 0;
         order: 1;
+        flex-basis: auto;
         height: 36em;
-        padding-bottom: 12px;
     }
 
     .main1 h1, .main1 h2, .populaires h1, .acts h1
