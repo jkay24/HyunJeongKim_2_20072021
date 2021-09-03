@@ -9,21 +9,12 @@
 
 #wrapper
 {
-    height: 100vh;
     width: 100%;
-    display: grid;
-    grid-template-areas: 
-        "header header header"
-        "searchbar searchbar searchbar"
-        "main1 main1 main2"
-        "acts acts acts"
-        "footer footer footer";
 }
 
 body 
 {
     font-family: 'Raleway', sans-serif;
-    min-height: 100vh;
 }
 
 h1
@@ -250,14 +241,14 @@ button
     margin-left: 10px;
 }
 
-/* Main hébergements section (ratio of activités to main section is about 7cm:8.5cm= 550px:668px , hence height of main section set to 670px) */
+/* Main hébergements section */
 
 .hebergements-container
 {
     display: flex;
     justify-content: space-between;
     height: 670px;
-    width: auto;
+    grid-area: hebergements;
 }
 
 .main1, .main2
@@ -269,10 +260,9 @@ button
 
 .main1
 {
-    flex-shrink: 1;
-    width: 63em;
     padding: 0 30px 0 30px;
     margin-right: 1em;
+    flex: 3 0 0;
     grid-area: main1;
 }
 
@@ -295,8 +285,8 @@ button
     flex-flow: row wrap;
     position: relative;
     justify-content: space-between;
-    height: 80%;
     align-content: space-between;
+    height: 80%;
 }
 
 .hebergement-sections, .populaires-sections
@@ -306,13 +296,13 @@ button
     background-color: white;
     padding: 3px;
     overflow: hidden;
-    box-shadow: 0 0 0 4px #e9e8e8;
+    box-shadow: 0 0 0 6px #e9e8e8;
 }
 
 .hebergement-sections
 {
-    width: 18em;
-    height: 15em;
+    width: 30%;
+    height: 45%;
 }
 
 .hebergement-pics 
@@ -340,8 +330,7 @@ button
 
 .main2
 {
-    position: relative;
-    flex-grow: 1;
+    flex: 1.25 0 0;
     padding: 0 30px 0 30px;
     margin-left: 1em;
     grid-area: main2;
@@ -371,11 +360,11 @@ button
     right: 10px;
 }
 
-.populaires-sections
+.populaires-sections 
 {
     display: flex;
-    height: 10em;
-    width: 25em;
+    height: 28%;
+    width: 95%;
 }
 
 .populaires-pics
@@ -412,17 +401,19 @@ button
 
 #activites
 {
-    height: 580px;
+    height: 550px;
     grid-area: acts;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .activites-grid
 {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 23em 23em 23em 23em;
+    grid-template-columns: 24%;
     grid-template-rows: 215px 45px 180px;
-    justify-content: space-between;
+    grid-column-gap: 2%;
     grid-row-gap: 1.5em;
     grid-template-areas: 
         "one two four five"
@@ -462,7 +453,7 @@ button
 
 .act-sections
 {
-    border: 7px solid #e9e8e8;
+    box-shadow: 0 0 0 6px #e9e8e8;
     border-radius: 20px;
     margin: 0px;
     overflow: hidden;
@@ -491,8 +482,8 @@ footer
     display: flex;
     background-color: var(--grey-color);
     justify-content: flex-start;
-    padding: 30px;
     grid-area: footer;
+    padding: 30px;
 }
 
 footer ul
@@ -512,37 +503,36 @@ footer ul li
 
 .foot
 {
-    margin-right:22%;
+    margin-right: 22%;
 }
 
 /* Media queries */
 
 /* For tablets - 2 column showing */
-@media (min-width: 415px) and (max-width: 768px)
+@media (min-width: 415px) and (max-width: 1231px)
 {
     #wrapper
     {
+        display: grid;
         margin: 0 auto;
-        grid-template-columns: 23em 23em;
-        grid-column-gap: 1em;
-        grid-template-rows: 5em 37em 48em 45em 12em;
+        grid-template-rows: 5em 25em 36em 60em 49em 12em;
         grid-template-areas: 
-            "header header"
-            "searchbar main2"
-            "main1 main1"
-            "acts acts"
-            "footer footer";
+            "header"
+            "searchbar"
+            "main2"
+            "main1"
+            "acts"
+            "footer";
     }
 
     header, main, #activites, footer
     {
-        margin: 0;
         height: auto;
     }
 
     .searchbar
     {
-        margin: 0 0 0 15px;
+        margin: 0 1em 0 1em;
     }
 
     #logo
@@ -552,19 +542,19 @@ footer ul li
 
     input.search
     {
-        width: 60%;
+        width: 30%;
         border-right: 0;
     }
 
     input.submit
     {
-        width: 35%;
+        width: 15%;
     }
 
     .filtres h2
     {
        flex-basis: 100%;
-       margin-block-end: 0.2em;
+       margin-block-end: 0.5em;
     }
 
     .filtres
@@ -576,37 +566,12 @@ footer ul li
     .filtres-element
     {
         margin-left: 0;
-        margin-right: 6px;
-        padding-right: 25px;
         margin-bottom: 10px;
     }
 
-    .info-text
+    .searchbar p
     {
-        margin-left: 50px;
-        display: block;
-    }
-
-    .fa-stack
-    {
-        float: left;
-    }
-
-    .filtres-element .fa-stack
-    {
-        float: unset;
-    }
-
-    .populaires-sections
-    {
-       height: 9em;
-       width: 20em;
-    }
-
-    .act-sections, .hebergement-sections
-    {
-       height: 12em;
-       width: 20em;
+        margin-block-start: 0;
     }
 
     .hebergements-container
@@ -615,70 +580,66 @@ footer ul li
         height: auto;
         flex-wrap: wrap;
     }
-
-    .hebergement-descriptions
-    {
-        bottom: 3%;
-    }
     
-    .main1-grid, .main2-grid
-    {
-        align-content: center;
-    }
-
-    .main1-grid
-    {
-        flex-wrap: wrap;
-        flex-direction: row;
-        height: 85%;
-        justify-content: space-around;
-        align-content: space-between;
-    }
-
     .main1, .main2
     {
         margin: 0;
         padding: 0;
+    
     }
     
     .main1
     {
         order: 2;
-        height: 47em;
-        position: relative;
-        right: 102%;
-        width: 46em;
         margin-top: 1em;
-        padding-bottom: 0.5em
+        height: 60em;
+        flex-basis: auto;
+    }
+
+    .main1-grid
+    {
+        justify-content: space-around;
+        height: 85%;
+    }
+
+    .hebergement-sections
+    {
+        width: 44%;
+        height: 30%;
     }
 
     .main2
     {
         order: 1;
-        height: 36em;
-        width: 22.5em;
+        height: 35em;
+    }
+
+    .main2-grid
+    {
+        padding: 1em;
+        height: 80%;
     }
 
     .main1 h1, .main1 h2, .populaires h1, .acts h1
     {
         margin-left: 18px;
     }
-    
-    .hebergement-pics 
+
+    .populaires-sections
     {
-        height: 7em;
+        width: 80%;
     }
 
-    #activites > *
+    .act-sections
     {
-        align-items: center;
-    }
+        height: 13em;
+     } 
 
     .activites-grid
     {
-        grid-template-columns: 21em 21em;
-        grid-template-rows: 12em 12em;
-        justify-content: space-around;
+        grid-template-columns: 48% 48%;
+        grid-template-rows: 13em;
+        grid-column-gap: 2em;
         grid-template-areas: 
             "one two"
             "three four"
@@ -701,8 +662,9 @@ footer ul li
 {
     #wrapper
     {
+        display: grid;
         margin: 0 auto;
-        grid-template-rows: 7em 33em 40em 40em 46em 44em 44em 27em;
+        grid-template-rows: 7em 33em 39em 39em 46em 42em 42em 27em;
         grid-template-areas: 
             "header"
             "searchbar"
@@ -858,7 +820,7 @@ footer ul li
     .act-sections, .hebergement-sections
     {
        height: 12em;
-       width: 20em;
+       width: 21em;
     }
 
     .hebergements-container
@@ -872,15 +834,11 @@ footer ul li
         bottom: 3%;
     }
 
-    .main1-grid, .main2-grid
-    {
-        align-content: center;
-    }
-
     .main1-grid
     {
         height: 90%;
         flex-direction: column;
+        align-content: center;
     }
 
     .main1, .main2
@@ -896,6 +854,7 @@ footer ul li
         border-radius: 0;
         order: 2;
         height: 90em;
+        flex-basis: auto;
     }
 
     .main2
@@ -918,7 +877,7 @@ footer ul li
 
     #activites > *
     {
-        align-items: center;
+        align-content: center;
     }
 
     .activites-grid
