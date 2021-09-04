@@ -684,47 +684,48 @@ footer ul li
 
     .header-wrap
     {
+        display: block;
         align-items: flex-start;
         border-bottom: 3px solid var(--grey-color);
-        flex-flow: row wrap;
     }
 
-    nav
+    #logo
     {
-        display: flex;
-        flex-flow: row wrap;
+        position: absolute;
     }
 
     nav ul 
     {
         padding-inline-start: 0;
-        flex-flow: row wrap;
+        flex-wrap: wrap;
     }
 
     nav li
     {
-        margin: 0;
-        padding: 0 1.5em 0 1.5em;
-        position: relative;
-        right: 17%;
+        margin: 2.5em 0 0 0;
+        padding: 0;
+        text-align: center;
     }
 
     .nav1
     {
         order: 2;
+        flex: 0 0 50%;
     }
 
     .nav2
     {
         order: 3;
+        flex: 0 0 50%;
     }
 
     .nav3
     {
         order: 1;
-        position: relative;
-        bottom: 3.5em;
-        left: 18em;
+        flex-basis: 100%;
+        margin-top: 0;
+        text-align: right;
+        padding-right: 5%;
     }
 
     .hover-tab
