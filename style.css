@@ -261,6 +261,14 @@ button {
   box-shadow: 0 0 0 6px #e9e8e8;
 }
 
+.hebergement-sections:hover {
+  transform: scale(1.05);
+}
+
+.populaires-sections:hover {
+  transform: scale(1.05);
+}
+
 .hebergement-sections {
   width: 30%;
   height: 45%;
