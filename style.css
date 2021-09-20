@@ -410,6 +410,10 @@ button {
   overflow: hidden;
 }
 
+.act-sections:hover {
+  transform: scale(1.05);
+}
+
 .act-pics {
   width: 100%;
   max-width: 100%;
@@ -449,6 +453,10 @@ footer ul li {
 
 .foot {
   margin-right: 22%;
+}
+
+li a:hover {
+  color: var(--blue-color);
 }
 
 /* Media queries */
