@@ -253,12 +253,12 @@ button {
 
 .hebergement-sections,
 .populaires-sections {
-  border: 3px solid white;
+  border: 3px solid #fff;
   border-radius: 20px;
   background-color: white;
   padding: 3px;
   overflow: hidden;
-  box-shadow: 0 0 0 6px #e9e8e8;
+  box-shadow: 0 0 0 5px #f5f5f5;
 }
 
 .hebergement-sections:hover {
@@ -403,7 +403,7 @@ button {
 }
 
 .act-sections {
-  box-shadow: 0 0 0 6px #e9e8e8;
+  box-shadow: 0 0 0 5px #f5f5f5;
   border-radius: 20px;
   margin: 0px;
   overflow: hidden;
